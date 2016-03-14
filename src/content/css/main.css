@@ -1,0 +1,15 @@
+body {
+  padding-top: 51px;
+}
+
+.centre {
+  text-align: center;
+}
+
+#get-url-btn {
+  margin-top: 20px;
+}
+
+a.btn {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <title>Url Shortener</title>
+        <!-- Bootstrap latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="content/css/main.css">
+    </head>
+    <body>
+        <!-- custom navbar   -->
+        <us-navbar></us-navbar>
+
+        <!-- main content container-->
+        <div ng-view class="container"></div>
+    
+        <!-- Third-party JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.4.4/angular-route.min.js"></script>
+
+        <!-- Google Url Shortener API -->
+        <script>
+          function init() {
+            gapi.client.setApiKey('AIzaSyB1TqgMG9kpQVWv6zbeFAvbgD0JqwWq6og');
+            gapi.client.load('urlshortener', 'v1');
+          }
+        </script>
+        <script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+        <!-- main app module -->
+        <script src="app/app.module.js"></script>
+        
+        <!-- core module -->
+        <script src="app/core/core.module.js"></script>
+        <script src="app/core/urlData.service.js"></script>
+
+        <!-- landing module -->
+        <script src="app/landing/landing.module.js"></script>
+        <script src="app/landing/config.routes.js"></script> 
+        <script src="app/landing/landing.controller.js"></script> 
+
+        <!-- layout module -->
+        <script src="app/layout/layout.module.js"></script>
+        <script src="app/layout/navbar.directive.js"></script>
+    </body>
+</html>

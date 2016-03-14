@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="centre">
+        <h1>Url Shortener</h1>
+        <p class="lead">The easy way to shorten your path</p>
+    </div>
+    <div class="row" ng-hide="vm.clicked">
+        <p class="centre">Please make a selection below</p>
+        <div class="col-sm-6 centre">
+            <a class="btn btn-primary" role="button" ng-click="vm.goLong()">I need a Long Url</a>
+        </div>
+        <div class="col-sm-6 centre">
+            <a class="btn btn-primary" role="button" ng-click="vm.goShort()">I need a Short Url</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 centre" ng-show="vm.clicked && vm.longUrl">
+            <input type="text" class="form-control" placeholder="i.e. http://goo.gl/fbsS" aria-describedby="basic-addon1" ng-model="vm.shortUrlPath">
+            <a class="btn btn-primary centre" id="get-url-btn" role="button" ng-click="vm.makeLongUrl(vm.shortUrlPath)">Hit me</a><br>
+            <a class="back-link" role="button" ng-click="vm.goBack()">Back</a>
+            
+        </div>
+        <div class="col-md-6 col-md-offset-3 centre" ng-show="vm.clicked && vm.shortUrl">
+            <input type="text" class="form-control" placeholder="i.e. http://www.google.com" aria-describedby="basic-addon1" ng-model="vm.longUrlPath">
+            <a class="btn btn-primary centre" id="get-url-btn" role="button" ng-click="vm.makeShortUrl(vm.longUrlPath)">Hit me</a><br>
+            <a class="back-link" role="button" ng-click="vm.goBack()">Back</a>
+            
+        </div>
+    </div>
+    <div class="row centre">
+        <div id="results"></div>
+    </div>
+</div>
